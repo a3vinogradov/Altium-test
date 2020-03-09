@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CCB9AF68-5475-4EE5-B4A4-AD8C4E35A543}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FileGenerator\FileGenerator.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FileGenerator">
+        <MSBuild Projects="FileGenerator\FileGenerator.dproj"/>
+    </Target>
+    <Target Name="FileGenerator:Clean">
+        <MSBuild Projects="FileGenerator\FileGenerator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FileGenerator:Make">
+        <MSBuild Projects="FileGenerator\FileGenerator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FileGenerator"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FileGenerator:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FileGenerator:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
