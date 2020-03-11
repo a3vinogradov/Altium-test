@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.280,C:\Work\Altium-test\FileSorterCL\Unit1.pas=C:\Work\Altium-test\FileSorterCL\FileSorterHelper.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.206,=C:\Work\Altium-test\FileSorterCL\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.543,=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020.03.11 11:46:36.533,C:\Work\Altium-test\FileSorterCL\FileSorterCL.dproj=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2020.03.11 11:50:54.206,=C:\Work\Altium-test\FileSorterCL\Unit1.pas</Transaction>
-    <Transaction>2020.03.11 11:51:27.280,C:\Work\Altium-test\FileSorterCL\FileSorterHelper.pas=C:\Work\Altium-test\FileSorterCL\Unit1.pas</Transaction>
-    <Transaction>2020.03.11 12:27:03.115,=C:\Work\Altium-test\Common\TimeChecker.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Work\Altium-test\FileSorterCL\FileSorterCL.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.115,=C:\Work\Altium-test\Common\TimeChecker.pas</Transaction>
   </Transactions>
 </BorlandProject>
