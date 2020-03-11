@@ -6,7 +6,7 @@
         <Projects Include="FileGenerator\FileGenerator.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="FileSorter\FileSorter.dproj">
+        <Projects Include="FileSorterCL\FileSorterCL.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -26,23 +26,23 @@
     <Target Name="FileGenerator:Make">
         <MSBuild Projects="FileGenerator\FileGenerator.dproj" Targets="Make"/>
     </Target>
-    <Target Name="FileSorter">
-        <MSBuild Projects="FileSorter\FileSorter.dproj"/>
+    <Target Name="FileSorterCL">
+        <MSBuild Projects="FileSorterCL\FileSorterCL.dproj"/>
     </Target>
-    <Target Name="FileSorter:Clean">
-        <MSBuild Projects="FileSorter\FileSorter.dproj" Targets="Clean"/>
+    <Target Name="FileSorterCL:Clean">
+        <MSBuild Projects="FileSorterCL\FileSorterCL.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="FileSorter:Make">
-        <MSBuild Projects="FileSorter\FileSorter.dproj" Targets="Make"/>
+    <Target Name="FileSorterCL:Make">
+        <MSBuild Projects="FileSorterCL\FileSorterCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="FileGenerator;FileSorter"/>
+        <CallTarget Targets="FileGenerator;FileSorterCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FileGenerator:Clean;FileSorter:Clean"/>
+        <CallTarget Targets="FileGenerator:Clean;FileSorterCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FileGenerator:Make;FileSorter:Make"/>
+        <CallTarget Targets="FileGenerator:Make;FileSorterCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

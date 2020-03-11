@@ -7,7 +7,7 @@ uses
   TimeChecker in '..\Common\TimeChecker.pas';
 
 const
-  Imax = 10000000;
+  Imax = 500000000;
 var
   i: int64;
   strList: TStringList;
