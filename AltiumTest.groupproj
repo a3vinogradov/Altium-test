@@ -6,6 +6,9 @@
         <Projects Include="FileGenerator\FileGenerator.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="FileSorter\FileSorter.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +26,23 @@
     <Target Name="FileGenerator:Make">
         <MSBuild Projects="FileGenerator\FileGenerator.dproj" Targets="Make"/>
     </Target>
+    <Target Name="FileSorter">
+        <MSBuild Projects="FileSorter\FileSorter.dproj"/>
+    </Target>
+    <Target Name="FileSorter:Clean">
+        <MSBuild Projects="FileSorter\FileSorter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FileSorter:Make">
+        <MSBuild Projects="FileSorter\FileSorter.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="FileGenerator"/>
+        <CallTarget Targets="FileGenerator;FileSorter"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FileGenerator:Clean"/>
+        <CallTarget Targets="FileGenerator:Clean;FileSorter:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FileGenerator:Make"/>
+        <CallTarget Targets="FileGenerator:Make;FileSorter:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
