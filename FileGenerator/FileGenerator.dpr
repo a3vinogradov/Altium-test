@@ -10,22 +10,24 @@ const
   Imax = 500000000;
 var
   i: int64;
-  strList: TStringList;
   tch: TTimeChecker;
   s: string;
+  strm: TBufferedFileStream;
+  buf: AnsiString;
+
 begin
-  strList := TStringList.Create;
+  strm := TBufferedFileStream.Create('data1.txt',fmCreate);
   tch := TTimeChecker.Create;
   try
     try
       tch.Start();
-      strList := TStringList.Create;
       Randomize();
       for i := 0  to Imax do
       begin
-        strList.Add(Format('%d. %s%d',[Random(65535),'test string',Random(65535)]));
+        buf :=Format('%d. %s%d',[Random(65535),'test string',Random(65535)])+#13#10;
+        strm.Write(buf[1],Length(Buf));
       end;
-      strList.SaveToFile('data.txt');
+      strm.FlushBuffer;
       tch.Stop();
       WriteLn(tch.Report());
     except
@@ -33,8 +35,8 @@ begin
         Writeln(E.ClassName, ': ', E.Message);
     end;
   finally
-    FreeAndNil(strList);
     FreeAndNil(tch);
+    FreeAndNil(strm);
   end;
   Readln(s);
 end.
