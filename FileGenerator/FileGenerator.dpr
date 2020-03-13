@@ -16,7 +16,7 @@ var
   buf: AnsiString;
 
 begin
-  strm := TBufferedFileStream.Create('data1.txt',fmCreate);
+  strm := TBufferedFileStream.Create('data.txt',fmCreate);
   tch := TTimeChecker.Create;
   try
     try

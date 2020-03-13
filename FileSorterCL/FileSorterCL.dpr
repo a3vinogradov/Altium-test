@@ -21,7 +21,7 @@ begin
     try
       tch := TTimeChecker.Create;
       tch.Start;
-      srcFile := 'c:\Work\Altium-test\FileGenerator\Win32\Debug\data.txt';
+      srcFile := 'c:\Work\Altium-test\FileGenerator\Win32\Debug\data1.txt';
       destFile := 'SortedData.txt';
       helper := TFileSorterHelper.Create(srcFile,destFile);
 
