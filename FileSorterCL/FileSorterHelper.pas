@@ -5,10 +5,10 @@ uses
   Generics.Collections, Generics.Defaults;
 
 const
+  MaxLengthOfTempFiles = 1000000; // максимальный объем временных файлов
   //MaxLengthOfTempFiles =   1000000; // максимальный объем временных файлов ~1Mb
   //MaxLengthOfTempFiles =   2000000; // максимальный объем временных файлов ~1Mb
   MaxLengthOfTempFiles = 200000000; // максимальный объем временных файлов ~200Mb
-
 type
   TTmpFileManager = class
   private
