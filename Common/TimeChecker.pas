@@ -15,7 +15,7 @@ type
     procedure Start;
     procedure Stop;
     function Report: String;
-  published
+
     property TimeStart: TDateTime read _timeStart write _timeStart;
     property TimeStop: TDateTime read _timeStop write _timeStop;
     property Active: Boolean read _active write SetActive;

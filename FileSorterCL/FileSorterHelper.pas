@@ -5,7 +5,9 @@ uses
   Generics.Collections, Generics.Defaults;
 
 const
-  MaxLengthOfTempFiles = 1000000; // максимальный объем временных файлов
+  //MaxLengthOfTempFiles =   1000000; // максимальный объем временных файлов ~1Mb
+  //MaxLengthOfTempFiles =   2000000; // максимальный объем временных файлов ~1Mb
+  MaxLengthOfTempFiles = 200000000; // максимальный объем временных файлов ~200Mb
 
 type
   TTmpFileManager = class
@@ -245,7 +247,7 @@ begin
   Flist.Add(TTmpFileManager.Create(Format('%dtmp.txt',[curTmpNumber])));
   strList.Free;
   // Сохранить лист во временный файл и продолжить чтение, пока не конец файла
-  end;
+end;
 
 
 

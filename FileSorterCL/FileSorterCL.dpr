@@ -9,6 +9,10 @@ uses
   FileSorterHelper in 'FileSorterHelper.pas',
   TimeChecker in '..\Common\TimeChecker.pas';
 
+const
+  defaultSrc ='RandomData.txt';
+  defaultDest = 'SortedData.txt';
+
 var
   tmp: string;
   srcFile: string;
@@ -19,12 +23,18 @@ var
 begin
   try
     try
+      WriteLn('Сортировка файла...');
+
       tch := TTimeChecker.Create;
       tch.Start;
-      srcFile := 'c:\Work\Altium-test\FileGenerator\Win32\Debug\data1.txt';
-      destFile := 'SortedData.txt';
-      helper := TFileSorterHelper.Create(srcFile,destFile);
 
+      srcFile := ParamStr(1);
+      if srcFile = '' then srcFile := defaultSrc;
+
+      destFile := ParamStr(2);
+      if destFile = '' then destFile := defaultDest;
+
+      helper := TFileSorterHelper.Create(srcFile,destFile);
       helper.Sort();
       tch.Stop;
 

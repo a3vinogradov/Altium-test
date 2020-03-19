@@ -7,21 +7,32 @@ uses
   TimeChecker in '..\Common\TimeChecker.pas';
 
 const
-  Imax = 500000000;
+  Imax = 500000000; // Количество строк в файле  ~11Гб
+  //Imax = 500000; // Количество строк в файле  ~11Мб
+  defaultDest ='RandomData.txt';  // Имя файла по умолчанию
+
 var
   i: int64;
   tch: TTimeChecker;
   s: string;
   strm: TBufferedFileStream;
   buf: AnsiString;
+  destFile: String;
 
 begin
-  strm := TBufferedFileStream.Create('data.txt',fmCreate);
+  destFile := ParamStr(1);
+  if destFile = '' then destFile := defaultDest;
+
+  strm := TBufferedFileStream.Create(defaultDest,fmCreate);
   tch := TTimeChecker.Create;
   try
     try
+      WriteLn('Генерация файла...');
+
+
       tch.Start();
       Randomize();
+
       for i := 0  to Imax do
       begin
         buf :=Format('%d. %s%d',[Random(65535),'test string',Random(65535)])+#13#10;
